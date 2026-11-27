@@ -1,10 +1,11 @@
+import { motion } from "framer-motion";
 import {
   Database, Layers, ShieldCheck, FolderTree, Gauge, Lock, KeyRound, Share2, Server,
   Terminal, Users, Camera, CalendarClock, LifeBuoy, RefreshCw, Globe, Network, Cloud, HardDrive,
 } from "lucide-react";
 
 type Topic = {
-  icon: typeof Boxes;
+  icon: typeof Database;
   title: string;
   desc: string;
   tags: string[];
