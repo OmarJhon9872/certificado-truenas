@@ -66,7 +66,7 @@ const Header = () => {
             <span className={`text-[10px] font-mono uppercase tracking-wider transition-colors ${
               scrolled ? "text-muted-foreground" : "text-white/60"
             }`}>
-              Kubernetes · Cloud Native
+              TrueNAS · Storage & DR
             </span>
           </div>
         </a>
@@ -119,7 +119,7 @@ const Header = () => {
                 </div>
                 <div>
                   <div className="font-bold text-foreground">{student.shortName}</div>
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">Kubernetes &amp; Cloud Native</div>
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">TrueNAS SysAdmin</div>
                 </div>
               </div>
               <nav className="flex flex-col gap-1">

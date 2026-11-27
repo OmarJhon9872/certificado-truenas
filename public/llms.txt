@@ -1,17 +1,6 @@
-# Portafolio Red Hat Enterprise Linux JR
+# CV digital · TrueNAS SysAdmin: Storage, Backup & Disaster Recovery
 
-> CV digital y portafolio profesional de Nombre Persona Demo Analista, certificado en Red Hat Enterprise Linux JR por Selling One. Administrador junior de servidores RHEL, redes y seguridad.
+> CV digital y portafolio profesional de Nombre Persona Demo Analista, certificado en TrueNAS SysAdmin: Storage, Backup & Disaster Recovery por Selling One.
 
-Este sitio funciona como currículum interactivo para procesos de reclutamiento. Incluye descripción del curso, temas dominados durante la certificación, evidencia de laboratorios, información del instructor (Ing. TIC's Jonathan Omar) y de la empresa capacitadora (Selling One).
-
-## Páginas
-
-- [Inicio](/): Hero, estadísticas, el curso, temas cursados, stack técnico, evidencia, instructor, empresa y contacto.
-
-## Secciones del portafolio
-
-- El curso: Red Hat Enterprise Linux JR, enfoque 80% laboratorio sobre RHEL real
-- Syllabus técnico: bases de RHEL, systemd, LVM, firewalld, Podman, diagnóstico, DNS, servidores web, reverse proxy, Cloudflare, seguridad y hardening SSH
-- Evidencia de laboratorios y prácticas realizadas durante el curso
-- Instructor: Ing. TIC's Jonathan Omar
-- Empresa capacitadora: Selling One
+- El curso: 80% laboratorio sobre servidores TrueNAS reales
+- Syllabus: ZFS, RAID, redundancia, datasets, cuotas, permisos Linux y ACL, SMB, NFS, gestión Linux, snapshots, backups automáticos, estrategia 3-2-1, rsync, replicación ZFS remota, WireGuard, DigitalOcean

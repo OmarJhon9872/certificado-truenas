@@ -58,7 +58,7 @@ const CertificateModal = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-foreground">Certificado válido</h3>
-                    <p className="text-xs text-muted-foreground">Kubernetes &amp; Cloud Native Infrastructure</p>
+                    <p className="text-xs text-muted-foreground">TrueNAS SysAdmin: Storage, Backup &amp; Disaster Recovery</p>
                   </div>
                 </div>
                 <button

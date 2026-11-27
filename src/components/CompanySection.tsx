@@ -4,9 +4,9 @@ import companyLogo from "@/assets/sellingone-logo.png";
 
 const benefits = [
   { icon: BookOpen, title: "Programa actualizado", desc: "Currícula alineada con el ecosistema CNCF y las demandas reales del mercado cloud native." },
-  { icon: Users, title: "Instructores certificados", desc: "Profesionales activos operando clústeres de Kubernetes en producción." },
+  { icon: Users, title: "Instructores certificados", desc: "Profesionales activos operando almacenamiento empresarial en producción." },
   { icon: Zap, title: "Aprendizaje práctico", desc: "Más del 80% del programa basado en laboratorios y casos reales." },
-  { icon: Monitor, title: "Entornos profesionales", desc: "Acceso a clústeres k3s, DOKS y GKE con Prometheus y Grafana." },
+  { icon: Monitor, title: "Entornos profesionales", desc: "Acceso a servidores TrueNAS, clientes Linux/Windows y DigitalOcean." },
   { icon: Award, title: "Certificación avalada", desc: "Reconocida por empresas del sector TI y telecomunicaciones." },
   { icon: HeartHandshake, title: "Bolsa de trabajo", desc: "Vinculación directa con empresas aliadas y red de egresados." },
 ];
@@ -45,12 +45,12 @@ const CompanySection = () => {
             </div>
             <p className="text-muted-foreground mt-6 text-lg leading-relaxed w-[90%] md:w-[90%] mx-auto md:mx-0 text-center md:text-left">
               <span className="font-semibold text-foreground">Selling One</span> es una empresa líder en
-              capacitación tecnológica especializada en Kubernetes, infraestructura cloud native,
-              redes y observabilidad. Con un enfoque 100% práctico y alianzas con empresas del sector TI,
+              capacitación tecnológica especializada en almacenamiento empresarial, respaldo,
+              recuperación ante desastres y administración Linux. Con un enfoque 100% práctico y alianzas con empresas del sector TI,
               forma a los nuevos profesionales que demanda la industria.
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-3 mt-8">
-              {["Capacitación TI", "Kubernetes & Cloud", "Aliados Enterprise", "Bolsa de Trabajo"].map((tag) => (
+              {["Capacitación TI", "Storage & Backup", "Aliados Enterprise", "Bolsa de Trabajo"].map((tag) => (
                 <span key={tag} className="badge-outline">{tag}</span>
               ))}
             </div>

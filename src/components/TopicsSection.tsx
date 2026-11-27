@@ -1,7 +1,6 @@
-import { motion } from "framer-motion";
 import {
-  Boxes, Cloud, CloudCog, HardDrive, Server, Network, Globe, Database,
-  Layers, LineChart, Activity, ShieldCheck, GitBranch, Route,
+  Database, Layers, ShieldCheck, FolderTree, Gauge, Lock, KeyRound, Share2, Server,
+  Terminal, Users, Camera, CalendarClock, LifeBuoy, RefreshCw, Globe, Network, Cloud, HardDrive,
 } from "lucide-react";
 
 type Topic = {
@@ -12,96 +11,24 @@ type Topic = {
 };
 
 const topics: Topic[] = [
-  {
-    icon: Boxes,
-    title: "Kubernetes: arquitectura del plano de control",
-    desc: "API server, etcd, scheduler y controller-manager. Ciclo de reconciliación declarativa, objetos (Deployment, StatefulSet, DaemonSet, Job) y el modelo de recursos con requests/limits y QoS classes.",
-    tags: ["kubectl", "etcd", "reconcile loop"],
-  },
-  {
-    icon: Server,
-    title: "k3s: Kubernetes ligero en el edge",
-    desc: "Distribución certificada CNCF con binario único: SQLite/etcd embebido, servidor + agentes, Traefik y servicelb sustituibles. Instalación multi-nodo, tokens de unión y HA con datastore externo.",
-    tags: ["k3s", "edge", "single-binary"],
-  },
-  {
-    icon: Cloud,
-    title: "Kubernetes gestionado en DigitalOcean",
-    desc: "Provisión de DOKS: node pools, autoescalado, integración con Load Balancers y Block Storage vía CSI, doctl y kubeconfig. Costos, límites de cuota y estrategia de upgrade de versiones.",
-    tags: ["DOKS", "doctl", "node pools"],
-  },
-  {
-    icon: CloudCog,
-    title: "Google Cloud Platform y GKE",
-    desc: "Proyectos, IAM y VPC en GCP; clústeres GKE Standard y Autopilot, Workload Identity, Cloud Logging y persistencia con Persistent Disk. Comparativa entre plano de control gestionado y autoadministrado.",
-    tags: ["GCP", "GKE", "IAM"],
-  },
-  {
-    icon: Route,
-    title: "Ingress NGINX y enrutamiento L7",
-    desc: "Ingress Controller NGINX: host/path routing, terminación TLS, annotations de rewrite, rate limiting y proxy buffers. Diferencias entre Service (ClusterIP, NodePort, LoadBalancer) e Ingress.",
-    tags: ["ingress-nginx", "TLS", "L7"],
-  },
-  {
-    icon: Network,
-    title: "DNS: resolución interna y externa",
-    desc: "CoreDNS y descubrimiento de servicios (svc.namespace.svc.cluster.local), políticas dnsPolicy y search domains; registros A, CNAME, TXT y propagación para exponer aplicaciones al exterior.",
-    tags: ["CoreDNS", "service discovery"],
-  },
-  {
-    icon: Globe,
-    title: "Gestión DNS en Cloudflare",
-    desc: "Zonas, registros proxied vs. DNS-only, certificados Origin, reglas de caché y protección frente al Ingress. Publicación segura de servicios del clúster con TLS de extremo a extremo.",
-    tags: ["Cloudflare", "proxy", "Origin CA"],
-  },
-  {
-    icon: Layers,
-    title: "Volúmenes: efímeros y persistentes",
-    desc: "emptyDir, hostPath, configMap y secret como volúmenes; ciclo de vida frente al Pod, montaje en múltiples contenedores y patrones sidecar para compartir estado.",
-    tags: ["volumes", "sidecar"],
-  },
-  {
-    icon: Database,
-    title: "PersistentVolume y PersistentVolumeClaim",
-    desc: "Aprovisionamiento estático y dinámico, binding PV/PVC, accessModes (RWO, ROX, RWX), reclaimPolicy y expansión de volúmenes. Cómo un StatefulSet consume volumeClaimTemplates.",
-    tags: ["PV", "PVC", "RWO"],
-  },
-  {
-    icon: HardDrive,
-    title: "StorageClass y CSI",
-    desc: "Definición de clases de almacenamiento, provisioners CSI, parámetros de rendimiento, volumeBindingMode (Immediate vs. WaitForFirstConsumer) y clase por defecto del clúster.",
-    tags: ["StorageClass", "CSI"],
-  },
-  {
-    icon: HardDrive,
-    title: "LVM sobre nodos Linux",
-    desc: "Physical volumes, volume groups y logical volumes; extensión en caliente, snapshots y thin provisioning para respaldar el almacenamiento de los nodos worker antes de exponerlo al clúster.",
-    tags: ["LVM", "XFS", "snapshots"],
-  },
-  {
-    icon: ShieldCheck,
-    title: "RHEL como nodo base",
-    desc: "Red Hat Enterprise Linux 9 preparado para Kubernetes: systemd, SELinux, firewalld, cgroups v2, módulos de kernel y runtime containerd. Hardening y afinación previa al join del nodo.",
-    tags: ["RHEL 9", "SELinux", "containerd"],
-  },
-  {
-    icon: Activity,
-    title: "Prometheus: métricas y alertas",
-    desc: "Modelo pull, scrape configs y service discovery en Kubernetes, exporters (node, kube-state-metrics), PromQL para tasas y percentiles, reglas de alerta y Alertmanager.",
-    tags: ["PromQL", "exporters", "alerting"],
-  },
-  {
-    icon: LineChart,
-    title: "Grafana: observabilidad y SLO",
-    desc: "Dashboards por namespace y workload, variables y paneles de saturación, latencia y errores. Lectura de señales doradas (RED/USE) para sustentar SLO y capacidad del clúster.",
-    tags: ["dashboards", "SLO", "RED/USE"],
-  },
-  {
-    icon: GitBranch,
-    title: "Cloud computing: modelos y arquitectura",
-    desc: "IaaS, PaaS y CaaS; regiones y zonas de disponibilidad, elasticidad, modelo de responsabilidad compartida, FinOps básico y criterios para elegir entre nube gestionada y self-hosted.",
-    tags: ["IaaS", "multi-AZ", "FinOps"],
-  },
+  { icon: Database, title: "ZFS: el sistema de archivos con integridad", desc: "Pools, vdevs, copy-on-write, checksums end-to-end, scrubs, compresión LZ4 y ARC/L2ARC. Por qué ZFS detecta y corrige corrupción silenciosa.", tags: ["zpool", "scrub", "ARC"] },
+  { icon: HardDrive, title: "RAID y RAID-Z", desc: "Mirror, RAID-Z1/Z2/Z3 frente a RAID 0/1/5/6/10 clásico: capacidad útil, rendimiento IOPS, tiempos de resilver y elección del layout según la carga.", tags: ["RAID-Z2", "mirror", "resilver"] },
+  { icon: ShieldCheck, title: "Redundancia y tolerancia a fallos", desc: "Hot spares, reemplazo de discos degradados, SMART, alertas por correo y diseño sin punto único de falla a nivel de disco, energía y red.", tags: ["SMART", "hot spare", "HA"] },
+  { icon: FolderTree, title: "Datasets y zvols", desc: "Jerarquía de datasets, herencia de propiedades, recordsize, compresión y zvols para iSCSI. Organización por área, servicio y política de respaldo.", tags: ["dataset", "zvol", "recordsize"] },
+  { icon: Gauge, title: "Cuotas y reservas", desc: "quota, refquota, reservation y refreservation por dataset y por usuario/grupo para controlar crecimiento y garantizar capacidad a servicios críticos.", tags: ["quota", "reservation"] },
+  { icon: Lock, title: "Permisos Linux básicos", desc: "Usuarios, grupos, propietario, modo rwx, umask, chmod/chown y bits especiales setuid, setgid y sticky bit aplicados a recursos compartidos.", tags: ["chmod", "chown", "umask"] },
+  { icon: KeyRound, title: "Permisos avanzados con ACL", desc: "POSIX ACL y NFSv4 ACL en TrueNAS: herencia, entradas por usuario/grupo, máscaras, getfacl/setfacl y modelos de permisos por departamento.", tags: ["NFSv4 ACL", "setfacl"] },
+  { icon: Share2, title: "Servidor SMB", desc: "Shares SMB para clientes Windows y macOS: usuarios locales, ACL, shadow copies con snapshots, auditoría y buenas prácticas de seguridad SMB3.", tags: ["SMB3", "Samba", "shadow copies"] },
+  { icon: Server, title: "NFS para Linux", desc: "Exports NFSv3/v4, mapeo de usuarios, redes autorizadas, montaje persistente en fstab y autofs, y diagnóstico de permisos entre cliente y servidor.", tags: ["NFSv4", "fstab", "autofs"] },
+  { icon: Terminal, title: "Gestión básica de Linux", desc: "Shell, sistema de archivos, procesos, servicios con systemd, red, logs con journalctl y administración de discos desde la terminal.", tags: ["bash", "systemd", "journalctl"] },
+  { icon: Users, title: "Usuarios, grupos y permisos en TrueNAS", desc: "Alta de cuentas locales, grupos por rol, directorios home, llaves SSH y principio de mínimo privilegio aplicado a datasets y servicios.", tags: ["RBAC", "SSH keys"] },
+  { icon: Camera, title: "Snapshots ZFS", desc: "Snapshots instantáneos, clones, rollback y restauración granular de archivos. Retención por política y recuperación ante ransomware.", tags: ["snapshot", "rollback", "clone"] },
+  { icon: CalendarClock, title: "Backups programados automáticos", desc: "Periodic Snapshot Tasks, Replication Tasks, Cloud Sync y Rsync Tasks programadas con retención, notificaciones y verificación de resultados.", tags: ["cron", "retención", "Cloud Sync"] },
+  { icon: LifeBuoy, title: "Estrategia de recuperación 3-2-1", desc: "Tres copias, dos medios distintos, una fuera de sitio. RPO/RTO, runbooks de desastre y pruebas periódicas de restauración documentadas.", tags: ["3-2-1", "RPO", "RTO"] },
+  { icon: RefreshCw, title: "rsync", desc: "Sincronización incremental local y remota sobre SSH: --archive, --delete, exclusiones, ancho de banda limitado y tareas rsync en TrueNAS.", tags: ["rsync", "SSH"] },
+  { icon: Layers, title: "Replicación ZFS remota", desc: "zfs send/receive incremental entre servidores TrueNAS, replicación cifrada por SSH y conmutación a un sitio secundario.", tags: ["zfs send", "replication"] },
+  { icon: Network, title: "VPN con WireGuard", desc: "Túneles WireGuard entre sitios y para administración remota: llaves, peers, AllowedIPs y transporte seguro de réplicas sin exponer servicios.", tags: ["WireGuard", "site-to-site"] },
+  { icon: Cloud, title: "Cloud computing con DigitalOcean", desc: "Droplets, Volumes, Spaces (S3-compatible) y firewalls cloud como destino off-site de respaldos y sitio de recuperación ante desastres.", tags: ["Droplets", "Spaces", "off-site"] },
 ];
 
 const TopicsSection = () => {
@@ -120,9 +47,8 @@ const TopicsSection = () => {
             Temas Cursados
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Quince bloques de contenido con profundidad de producción: del plano de control de
-            Kubernetes al almacenamiento persistente, el enrutamiento L7 y la observabilidad del
-            clúster.
+            Dieciocho bloques con profundidad de producción: de ZFS y RAID-Z a permisos con ACL,
+            servicios SMB/NFS, respaldos automáticos y recuperación ante desastres en la nube.
           </p>
         </motion.div>
 

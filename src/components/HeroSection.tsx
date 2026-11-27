@@ -14,7 +14,7 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBanner})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-foreground/70 to-foreground/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-glow/40 via-foreground/70 to-foreground/90" />
 
       {/* Grid overlay */}
       <div
@@ -65,7 +65,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <span className="font-semibold">Kubernetes &amp; Cloud Native Infrastructure</span> · Certificado por{" "}
+          <span className="font-semibold">TrueNAS SysAdmin: Storage, Backup &amp; Disaster Recovery</span> · Certificado por{" "}
           <span className="text-white font-semibold">Selling One</span>
         </motion.p>
 
@@ -77,7 +77,7 @@ const HeroSection = () => {
         >
           <span className="inline-flex items-center gap-2"><MapPin className="w-4 h-4" /> México</span>
           <span className="w-1 h-1 rounded-full bg-white/40" />
-          <span>k3s · Ingress NGINX · Prometheus</span>
+          <span>ZFS · SMB/NFS · Backup 3-2-1</span>
           <span className="w-1 h-1 rounded-full bg-white/40" />
           <span>100% Completado</span>
         </motion.div>

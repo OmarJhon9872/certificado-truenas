@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const tools = [
-  "Kubernetes", "k3s", "kubectl", "Helm", "containerd", "DOKS",
-  "DigitalOcean", "GCP", "GKE", "Ingress NGINX", "CoreDNS", "Cloudflare",
-  "PV / PVC", "StorageClass", "CSI", "LVM", "RHEL 9", "SELinux",
-  "Prometheus", "PromQL", "Alertmanager", "Grafana", "kube-state-metrics", "Terraform-ready",
+  "TrueNAS SCALE", "ZFS", "RAID-Z", "zpool", "Datasets", "Snapshots",
+  "Replication", "zfs send/recv", "SMB3", "NFSv4", "NFSv4 ACL", "POSIX ACL",
+  "Linux", "systemd", "rsync", "rclone", "Cloud Sync", "WireGuard",
+  "DigitalOcean", "Droplets", "Spaces", "SMART", "3-2-1", "SSH",
 ];
 
 const ToolsSlider = () => {
@@ -17,7 +17,7 @@ const ToolsSlider = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          Stack Técnico · Ecosistema Cloud Native
+          Stack Técnico · Storage, Backup & DR
         </motion.p>
       </div>
       <div className="relative">

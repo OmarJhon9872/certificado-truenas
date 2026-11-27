@@ -44,7 +44,7 @@ const InstructorSection = () => {
               <div className="mt-5">
                 <div className="text-xs font-mono uppercase tracking-widest text-white/60">Instructor titular</div>
                 <h3 className="text-2xl font-bold mt-1">Ing. TIC's Jonathan Omar</h3>
-                <div className="text-white/70 text-sm mt-1">Especialista en Kubernetes & Cloud Native</div>
+                <div className="text-white/70 text-sm mt-1">Especialista en Storage, Backup & DR</div>
               </div>
               <div className="flex gap-2 mt-4">
                 <span className="inline-flex items-center gap-1 text-xs px-3 py-1 rounded-full bg-white/10 border border-white/20">
@@ -59,13 +59,12 @@ const InstructorSection = () => {
             <div className="md:col-span-2">
               <Quote className="w-10 h-10 text-white/30 mb-4" />
               <p className="text-lg md:text-xl leading-relaxed text-white/90 italic">
-                "El programa de Kubernetes exige sostener un clúster real: k3s sobre nodos RHEL,
-                plano de control gestionado en DigitalOcean y GCP, almacenamiento con PV, PVC y
-                StorageClass, enrutamiento con Ingress NGINX y DNS en Cloudflare, todo observado con
-                Prometheus y Grafana.
+                "El programa de TrueNAS exige proteger datos reales: pools ZFS en RAID-Z, datasets
+                con cuotas y ACL, servicios SMB y NFS, snapshots y respaldos automáticos, replicación
+                remota sobre WireGuard y un plan 3-2-1 con copia off-site en DigitalOcean.
                 <span className="not-italic font-semibold text-white"> {student.shortName}</span> ha
                 demostrado criterio técnico, disciplina de diagnóstico y una comprensión sólida del
-                modelo declarativo a lo largo de toda la certificación."
+                ciclo de respaldo y recuperación a lo largo de toda la certificación."
               </p>
               <div className="mt-6 pt-6 border-t border-white/10 grid grid-cols-3 gap-4 text-center">
                 <div>

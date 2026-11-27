@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "5", label: "Clústeres desplegados (k3s, DOKS, GKE)" },
-  { value: "14", label: "Módulos cloud native completados" },
-  { value: "28", label: "Laboratorios y manifiestos entregados" },
-  { value: "99.9%", label: "Disponibilidad objetivo en el proyecto final" },
+  { value: "6", label: "Pools ZFS diseñados y operados" },
+  { value: "18", label: "Módulos de storage y DR completados" },
+  { value: "30", label: "Laboratorios y respaldos verificados" },
+  { value: "3-2-1", label: "Estrategia de recuperación implementada" },
 ];
 
 const StatsSection = () => {

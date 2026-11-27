@@ -1,29 +1,13 @@
 import { motion } from "framer-motion";
-import { Boxes, Clock, Cloud, HardDrive, Activity, Route } from "lucide-react";
+import { Database, Clock, Cloud, KeyRound, LifeBuoy, Route } from "lucide-react";
 import labTerminal from "@/assets/lab-terminal.jpg";
 import { useStudent } from "@/hooks/useStudent";
 
 const highlights = [
-  {
-    icon: Boxes,
-    title: "Orquestación declarativa",
-    desc: "Manifiestos versionados, controladores, probes, rolling updates y rollback: el estado deseado como única fuente de verdad.",
-  },
-  {
-    icon: Cloud,
-    title: "Multi-nube real",
-    desc: "El mismo workload sobre k3s autoadministrado, DOKS en DigitalOcean y GKE en GCP, comparando costo, control y operación.",
-  },
-  {
-    icon: HardDrive,
-    title: "Estado y almacenamiento",
-    desc: "LVM en los nodos, PV/PVC, StorageClass y provisioners CSI para correr cargas con estado sin perder datos.",
-  },
-  {
-    icon: Activity,
-    title: "Observabilidad de primera clase",
-    desc: "Prometheus + Grafana desde el día uno: métricas, PromQL, alertas y dashboards que sustentan decisiones de capacidad.",
-  },
+  { icon: Database, title: "Integridad con ZFS", desc: "Pools RAID-Z, checksums, scrubs y datasets con cuotas: los datos se protegen desde el diseño del almacenamiento." },
+  { icon: KeyRound, title: "Acceso controlado", desc: "Permisos Linux, ACL avanzadas y servicios SMB/NFS configurados con mínimo privilegio para cada equipo." },
+  { icon: LifeBuoy, title: "Recuperación probada", desc: "Snapshots, replicación remota y rsync automatizados bajo la estrategia 3-2-1, con restauraciones cronometradas." },
+  { icon: Cloud, title: "Off-site en la nube", desc: "Copias en DigitalOcean conectadas por VPN WireGuard como sitio de recuperación ante desastres." },
 ];
 
 const CourseSection = () => {
@@ -40,12 +24,12 @@ const CourseSection = () => {
         >
           <span className="badge-accent mb-4 inline-block">El curso</span>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-            Kubernetes &amp; Cloud Native Infrastructure
+            TrueNAS SysAdmin: Storage, Backup &amp; Disaster Recovery
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
             El programa donde <span className="font-semibold text-foreground">{student.fullName}</span> aprendió
-            a diseñar, desplegar y operar clústeres de Kubernetes en producción: desde k3s sobre
-            nodos RHEL hasta plano de control gestionado en DigitalOcean y GCP.
+            a diseñar almacenamiento confiable con TrueNAS y ZFS, compartirlo de forma segura y
+            garantizar que cualquier dato pueda recuperarse ante una falla, un error humano o un ransomware.
           </p>
         </motion.div>
 
@@ -58,7 +42,7 @@ const CourseSection = () => {
           >
             <img
               src={labTerminal}
-              alt="Terminal operando un clúster de Kubernetes durante un laboratorio del curso"
+              alt="Terminal administrando un servidor TrueNAS durante un laboratorio del curso"
               width={1024}
               height={1024}
               loading="lazy"
@@ -68,16 +52,15 @@ const CourseSection = () => {
             <div className="relative h-full flex flex-col justify-end p-8">
               <Route className="w-8 h-8 text-white mb-4" />
               <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">
-                No es teoría de YAML: es una guardia de SRE simulada
+                No es teoría: es una guardia de almacenamiento simulada
               </h3>
               <p className="text-white/80 mt-3 leading-relaxed">
-                Cada módulo arranca con un síntoma real: pods en CrashLoopBackOff, un PVC en Pending
-                porque falta StorageClass, un Ingress que devuelve 502 o una alerta de Prometheus
-                disparada a las 3 a.m. Aprobar exige diagnosticar con evidencia, corregir con
-                manifiestos y documentar el post-mortem.
+                Cada módulo arranca con un incidente real: un disco degradado en el pool, un share SMB sin
+                acceso, un borrado masivo por ransomware o una réplica remota fallida. Aprobar exige
+                diagnosticar, restaurar con evidencia y documentar el post-mortem.
               </p>
               <div className="flex flex-wrap gap-2 mt-6">
-                {["k3s", "DOKS", "GKE", "Ingress NGINX", "PV/PVC", "StorageClass", "Prometheus", "Grafana", "Cloudflare"].map((t) => (
+                {["TrueNAS", "ZFS", "RAID-Z", "SMB", "NFS", "ACL", "Snapshots", "rsync", "WireGuard", "DigitalOcean"].map((t) => (
                   <span
                     key={t}
                     className="text-xs font-mono px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white"
@@ -116,9 +99,8 @@ const CourseSection = () => {
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 <span className="font-semibold text-foreground">Enfoque 80/20 invertido:</span> 80% laboratorio
-                sobre clústeres reales — autoadministrados y gestionados — y 20% teoría. El resultado
-                es un perfil que sabe leer un <code className="font-mono text-primary">kubectl describe</code> y
-                un panel de Grafana antes de tocar nada.
+                sobre servidores TrueNAS reales y 20% teoría. El resultado es un perfil que sabe leer un{" "}
+                <code className="font-mono text-primary">zpool status</code> y probar una restauración antes de dar por bueno un respaldo.
               </p>
             </motion.div>
           </div>

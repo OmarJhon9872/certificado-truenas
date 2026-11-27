@@ -16,8 +16,8 @@ const Footer = () => {
               <h3 className="text-xl font-bold">{student.shortName}</h3>
             </div>
             <p className="text-primary-foreground/60 text-sm leading-relaxed">
-              Certificado en <span className="text-white font-semibold">Kubernetes &amp; Cloud Native Infrastructure</span> por
-              Selling One. Buscando mi siguiente reto operando plataformas de contenedores en producción.
+              Certificado en <span className="text-white font-semibold">TrueNAS SysAdmin: Storage, Backup &amp; Disaster Recovery</span> por
+              Selling One. Buscando mi siguiente reto operando almacenamiento y continuidad de negocio.
             </p>
           </div>
           <div>
@@ -71,7 +71,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row gap-2 items-center justify-between text-xs text-primary-foreground/40">
-          <div>© 2026 {student.shortName} · Certificación Kubernetes &amp; Cloud Native Infrastructure</div>
+          <div>© 2026 {student.shortName} · Certificación TrueNAS SysAdmin: Storage, Backup &amp; Disaster Recovery</div>
           <div>Impartido por <span className="text-white/70">Selling One</span> · Instructor: <span className="text-white/70">Ing. TIC's Jonathan Omar</span></div>
         </div>
       </div>
