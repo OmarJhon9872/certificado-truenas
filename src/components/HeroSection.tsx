@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Mail, Download, ShieldCheck } from "lucide-react";
-import heroBanner from "@/assets/hero-k8s.jpg";
+import heroBanner from "@/assets/hero-truenas-storage.jpg";
 import CertificateModal from "./CertificateModal";
 import { useStudent } from "@/hooks/useStudent";
 

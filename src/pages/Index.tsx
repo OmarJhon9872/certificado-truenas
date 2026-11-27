@@ -15,8 +15,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>CV · TrueNAS SysAdmin: Storage, Backup & Disaster Recovery | Selling One</title>
-        <meta name="description" content="Portafolio profesional certificado en TrueNAS: ZFS, RAID-Z, SMB, NFS, ACL, snapshots, respaldos 3-2-1, WireGuard y DigitalOcean." />
+        <title>Nombre Persona Demo Analista | TrueNAS SysAdmin · Selling One</title>
+        <meta name="description" content="CV digital de Nombre Persona Demo Analista: TrueNAS, ZFS, RAID-Z, SMB/NFS, snapshots, respaldos 3-2-1, WireGuard y DigitalOcean." />
         <link rel="canonical" href="/" />
         <meta property="og:url" content="/" />
         <meta property="og:type" content="profile" />
